@@ -12,18 +12,19 @@ library("ggplot2")
 
 # Draw a column (bar) chart of diamonds cuts by price, with each bar filled by 
 # clarity. You should see a _stacked_ bar chart.
+ggplot(diamonds) + geom_col(mapping = aes(x = clarity, y = price))
 
 
 # Draw the same chart again, but with each element positioned to "fill" the y axis
-
+ggplot(diamonds) + geom_col(mapping = aes(x = clarity, y = price, fill = price), position = "fill")
 
 # Draw the same chart again, but with each element positioned to "dodge" each other
-
+ggplot(diamonds) + geom_col(mapping = aes(x = clarity, y = price, fill = price), position = "dodge")
 
 # Draw a plot with point geometry with the x-position mapped to `cut` and the 
 # y-position mapped to `clarity`
 # This creates a "grid" grouping the points
-
+ggplot(diamonds) + geom_point(mapping = aes(x = cut , y = clarity))
 
 # Use the "jitter" position adjustment to keep the points from all overlapping!
 # (This works a little better with a sample of diamond data, such as from the 
@@ -34,7 +35,7 @@ library("ggplot2")
 ## Scales
 
 # Draw a "boxplot" (with `geom_boxplot`) for the diamond's price (y) by color (x)
-
+ggplot(diamonds) + geom_boxplot(mapping = aes(x = color , y = price))
 
 # This has a lot of outliers, making it harder to read. To fix this, draw the 
 # same plot but with a _logarithmic_ scale for the y axis.
