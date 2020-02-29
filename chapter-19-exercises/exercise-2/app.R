@@ -1,6 +1,21 @@
 # Exercise 2: a basic Shiny app
 
 # Load the `shiny` package
+library("shiny")
+
+ui <- fluidPage(
+  titlePanel("Cost Calculator")
+  
+  numericInput(inputId = "price", label = "Price (in dollars)", value = 0, min = ),
+  
+)
+
+server <- function(input, output, session) {
+  total <-
+    
+}
+
+shinyApp(ui, server))
 
 
 # Define a new `ui` variable. This variable should be assigned a `fluidPage()` layout
